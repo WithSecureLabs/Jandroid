@@ -1,0 +1,14 @@
+#
+#### Requirements file ####
+#### Use `pip install -r requirements.txt`
+#
+
+neo4j
+androguard == 3.3.5
+neo4jrestclient
+
+colorama
+
+## For memory usage analysis.
+## Uncomment if needed.
+#psutil

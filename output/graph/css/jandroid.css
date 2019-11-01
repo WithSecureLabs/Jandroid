@@ -1,0 +1,143 @@
+body {  
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 13px;
+    background-color: #eef2f5;
+}
+hr {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  border-style: groove;
+  border-width: 1px;
+}
+table, tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+#uifilters {
+    display: float;
+    width: 950px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    vertical-align: middle;
+}
+#maincontainer {
+    display: inline-block;
+}
+#jandroidnw {
+    width: 750px;
+    height: 400px;
+    background-color: #ffffff;
+    border: 1px solid lightgray;
+    display: inline-block;
+    padding: 5px 5px 5px 5px;
+    z-index: 1;
+}
+#mainfilters {
+    width: 200px;
+    height: 400px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 5px 5px 5px;
+}
+#appfilter {
+    width: 200px;
+}
+#bugfilter {
+    width: 200px;
+}
+#applyfilters {
+    width: 200px;
+}
+#clearfilters {
+    width: 200px;
+}
+#eventSpan {
+    width: 800px;
+    height: 50px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 12px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break:break-all;
+}
+div.vis-network div.vis-navigation div.vis-button.vis-up, 
+div.vis-network div.vis-navigation div.vis-button.vis-down, 
+div.vis-network div.vis-navigation div.vis-button.vis-left, 
+div.vis-network div.vis-navigation div.vis-button.vis-right, 
+div.vis-network div.vis-navigation div.vis-button.vis-zoomIn, 
+div.vis-network div.vis-navigation div.vis-button.vis-zoomOut, 
+div.vis-network div.vis-navigation div.vis-button.vis-zoomExtends {
+  background-image: none !important;
+}
+
+div.vis-network div.vis-navigation div.vis-button:hover {
+  box-shadow: none !important;
+}
+
+.vis-button:after {
+  font-size: 2em;
+  color: gray;
+}
+
+.vis-button:hover:after {
+  font-size: 2em;
+  color: lightgray;
+}
+
+.vis-button.vis-up:after {
+  content: "▲";
+}
+
+.vis-button.vis-down:after {
+  content: "▼";
+}
+
+.vis-button.vis-left:after {
+  content: "◀";
+}
+
+.vis-button.vis-right:after {
+  content: "▶";
+}
+
+.vis-button.vis-zoomIn:after {
+  content: "+";
+  font-weight: bold;
+}
+
+.vis-button.vis-zoomOut:after {
+  content: "−";
+  font-weight: bold;
+}
+
+.vis-button.vis-zoomExtends:after {
+  content: "⤧";
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 120%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

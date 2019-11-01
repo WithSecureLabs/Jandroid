@@ -1,0 +1,1 @@
+start python ./gui/jandroid_gui.py

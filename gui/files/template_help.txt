@@ -1,0 +1,33 @@
+TEMPLATES & LINKS
+
+What are templates?
+Templates are simply JSON objects with a .template extension. They are used by Jandroid in its pattern-matching. That is, a template specifies the key components that can be used to identify, for example, an Android logic bug. Jandroid will then use these components in its search.
+
+What are links?
+A template typically represents a single pattern, or single logic bug. If you want to identify possible exploit chains, then you would need to tell Jandroid about how the individual bugs may be connected. This is done using a .links file, which is also essentially just in JSON format. 
+Note that this GUI does not enable you to create links. In the event that new templates are created, you will need to update the .links file manually.
+
+Template components
+A Jandroid template has 4 main parts:
+1. METADATA
+2. MANIFESTPARAMS
+3. CODEPARAMS
+4. GRAPH
+
+METADATA
+A template's metadata provides Jandroid with information that it needs to correctly process the template. Right now, all that is required is a unique name for the template.
+
+MANIFESTPARAMS
+Oftentimes, with Android, just the information from an application's manifest can be helpful in narrowing down possible candidates for logic bugs. e.g., an activity with BROWSABLE intents would be a good starting point. The manifest analysis section of the template creator enables you to specify various rules to search for within AndroidManifest.xml. Simply double-click a node to add a rule. Rules can be of 4 types: TAGEXISTS (to check for the existence of a tag), TAGNOTEXISTS (to find an element that does not have a certain tag), TAGVALUEMATCH (to check for a tag that has a certain value), and TAGVALUENOMATCH (to check for an element that has at least one tag with values that are different to the one specified). 
+
+CODEPARAMS
+If a more detailed analysis is required, where you want to look for an app that contains a particular class or method, or which has a call-path between two specific methods, then a code analysis can be performed. There are two sub-types: SEARCH and TRACE.
+
+Code Search:
+If you want to identify the presence of a class/method/string, or the presence of calls to a class/method/string, then you ca specify this requirement using a SEARCH. In the case where calls to a class/method/string are identified, you have the option to return the calling class/method to be used for later analyses or to be graphed.
+
+Code Trace:
+If you want to identify the presence of a path between two particular methods within an application, then this can be specified using a TRACE. Simply provide the FROM and TO methods, as well as a trace direction. The tracepath can be returned for graphing, if required.
+
+GRAPH
+If the data returned from the analysis is to be graphed (either in Neo4j or custom graph), then you need to specify a "pattern" for the graphing. The main parameters that need to be specified are WHAT is to be graphed (this will typially be a class/method/tracepath), what ASPECT (such as class name, method name, or combination) is to be graphed, and what ATTRIBUTES or LABELS to assign.

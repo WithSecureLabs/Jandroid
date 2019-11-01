@@ -1,0 +1,41 @@
+{
+    "METADATA": {
+        "NAME": "JSbridgeBrowsable"
+    },    
+    "MANIFESTPARAMS": {
+        "BASEPATH": "manifest->application->activity OR manifest->application->activity-alias",
+        "SEARCHPATH": {
+            "intent-filter": {
+                "action": {
+                    "LOOKFOR": {
+                        "TAGVALUEMATCH": "<NAMESPACE>:name=android.intent.action.VIEW"
+                    }
+                },
+                "category": {
+                    "LOOKFOR": {
+                        "TAGVALUEMATCH": "<NAMESPACE>:name=android.intent.category.BROWSABLE"
+                    }
+                },
+                "data": {
+                    "RETURN": ["<NAMESPACE>:host AS @host", "<NAMESPACE>:scheme AS @scheme"]
+                }                
+            }
+        },
+        "RETURN": ["<smali>:<NAMESPACE>:name AS @activity_name"]
+    },
+    "CODEPARAMS": {
+        "SEARCH": {
+            "SEARCHFORCALLTOMETHOD": {
+                "METHOD": "Landroid/webkit/WebView;->addJavascriptInterface",
+                "RETURN": "<class> AS @web_view"
+            }
+        },
+        "TRACE": {
+            "TRACEFROM": "<method>:@web_view[]->loadUrl(Ljava/lang/String;)V",
+            "TRACETO": "<class>:@activity_name",
+            "TRACELENGTHMAX": 10,
+            "RETURN": "<tracepath> AS @tracepath_browsablejsbridge"
+        }
+    },
+    "GRAPH": "@tracepath_browsablejsbridge WITH <method>:<desc>:<class> AS attribute=nodename"
+}

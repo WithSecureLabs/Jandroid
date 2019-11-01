@@ -1,0 +1,305 @@
+{
+    "manifest": [
+        "package",
+        "<NAMESPACE>:sharedUserId",
+        "<NAMESPACE>:sharedUserLabel",
+        "<NAMESPACE>:versionCode",
+        "<NAMESPACE>:versionName",
+        "<NAMESPACE>:installLocation"
+    ],
+    "manifest->uses-permission": [
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:maxSdkVersion"
+    ],
+    "manifest->permission": [
+        "<NAMESPACE>:description",
+        "<NAMESPACE>:icon",
+        "<NAMESPACE>:label",
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:permissionGroup",
+        "<NAMESPACE>:protectionLevel"
+    ],
+    "manifest->permission-tree": [
+        "<NAMESPACE>:icon",
+        "<NAMESPACE>:label",
+        "<NAMESPACE>:name"
+    ],
+    "manifest->permission-group": [
+        "<NAMESPACE>:description",
+        "<NAMESPACE>:icon",
+        "<NAMESPACE>:label",
+        "<NAMESPACE>:name"
+    ],
+    "manifest->instrumentation": [
+        "<NAMESPACE>:functionalTest",
+        "<NAMESPACE>:handleProfiling",
+        "<NAMESPACE>:icon",
+        "<NAMESPACE>:label",
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:targetPackage"
+    ],
+    "manifest->uses-sdk": [
+        "<NAMESPACE>:minSdkVersion",
+        "<NAMESPACE>:targetSdkVersion",
+        "<NAMESPACE>:maxSdkVersion"
+    ],
+    "manifest->uses-configuration": [
+        "<NAMESPACE>:reqFiveWayNav",
+        "<NAMESPACE>:reqHardKeyboard",
+        "<NAMESPACE>:reqKeyboardType",
+        "<NAMESPACE>:reqNavigation",
+        "<NAMESPACE>:reqTouchScreen"
+    ],
+    "manifest->uses-feature": [
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:required",
+        "<NAMESPACE>:glEsVersion"
+    ],
+    "manifest->supports-screens": [
+        "<NAMESPACE>:resizeable",
+        "<NAMESPACE>:smallScreens",
+        "<NAMESPACE>:normalScreens",
+        "<NAMESPACE>:largeScreens",
+        "<NAMESPACE>:xlargeScreens",
+        "<NAMESPACE>:anyDensity",
+        "<NAMESPACE>:requiresSmallestWidthDp",
+        "<NAMESPACE>:compatibleWidthLimitDp",
+        "<NAMESPACE>:largestWidthLimitDp"
+    ],
+    "manifest->compatible-screens->screen": [
+        "<NAMESPACE>:screenSize",
+        "<NAMESPACE>:screenDensity"
+    ],
+    "manifest->supports-gl-texture": [
+        "<NAMESPACE>:name"
+    ],
+    "manifest->application": [
+        "<NAMESPACE>:allowTaskReparenting",
+        "<NAMESPACE>:allowBackup",
+        "<NAMESPACE>:backupAgent",
+        "<NAMESPACE>:banner",
+        "<NAMESPACE>:debuggable",
+        "<NAMESPACE>:description",
+        "<NAMESPACE>:enabled",
+        "<NAMESPACE>:hasCode",
+        "<NAMESPACE>:hardwareAccelerated",
+        "<NAMESPACE>:icon",
+        "<NAMESPACE>:isGame",
+        "<NAMESPACE>:killAfterRestore",
+        "<NAMESPACE>:largeHeap",
+        "<NAMESPACE>:label",
+        "<NAMESPACE>:logo",
+        "<NAMESPACE>:manageSpaceActivity",
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:permission",
+        "<NAMESPACE>:persistent",
+        "<NAMESPACE>:process",
+        "<NAMESPACE>:restoreAnyVersion",
+        "<NAMESPACE>:requiredAccountType",
+        "<NAMESPACE>:restrictedAccountType",
+        "<NAMESPACE>:supportsRtl",
+        "<NAMESPACE>:taskAffinity",
+        "<NAMESPACE>:testOnly",
+        "<NAMESPACE>:theme",
+        "<NAMESPACE>:uiOptions",
+        "<NAMESPACE>:vmSafeMode"
+    ],
+    "manifest->application->activity": [
+        "<NAMESPACE>:allowEmbedded",
+        "<NAMESPACE>:allowTaskReparenting",
+        "<NAMESPACE>:alwaysRetainTaskState",
+        "<NAMESPACE>:autoRemoveFromRecents",
+        "<NAMESPACE>:banner",
+        "<NAMESPACE>:clearTaskOnLaunch",
+        "<NAMESPACE>:configChanges",
+        "<NAMESPACE>:documentLaunchMode",
+        "<NAMESPACE>:enabled",
+        "<NAMESPACE>:excludeFromRecents",
+        "<NAMESPACE>:exported",
+        "<NAMESPACE>:finishOnTaskLaunch",
+        "<NAMESPACE>:hardwareAccelerated",
+        "<NAMESPACE>:icon",
+        "<NAMESPACE>:label",
+        "<NAMESPACE>:launchMode",
+        "<NAMESPACE>:maxRecents",
+        "<NAMESPACE>:multiprocess",
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:noHistory",
+        "<NAMESPACE>:parentActivityName",
+        "<NAMESPACE>:permission",
+        "<NAMESPACE>:process",
+        "<NAMESPACE>:relinquishTaskIdentity",
+        "<NAMESPACE>:screenOrientation",
+        "<NAMESPACE>:stateNotNeeded",
+        "<NAMESPACE>:taskAffinity",
+        "<NAMESPACE>:theme",
+        "<NAMESPACE>:uiOptions",
+        "<NAMESPACE>:windowSoftInputMode"
+    ],
+    "manifest->application->activity->intent-filter": [
+        "<NAMESPACE>:icon",
+        "<NAMESPACE>:label",
+        "<NAMESPACE>:priority"
+    ],
+    "manifest->application->activity->intent-filter->action": [
+        "<NAMESPACE>:name"
+    ],
+    "manifest->application->activity->intent-filter->category": [
+        "<NAMESPACE>:name"
+    ],
+    "manifest->application->activity->intent-filter->data": [
+        "<NAMESPACE>:scheme",
+        "<NAMESPACE>:host",
+        "<NAMESPACE>:port",
+        "<NAMESPACE>:path",
+        "<NAMESPACE>:pathPattern",
+        "<NAMESPACE>:pathPrefix",
+        "<NAMESPACE>:mimeType"
+    ],
+    "manifest->application->activity->meta-data": [
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:resource",
+        "<NAMESPACE>:value"
+    ],
+    "manifest->application->activity-alias": [
+        "<NAMESPACE>:enabled",
+        "<NAMESPACE>:exported",
+        "<NAMESPACE>:icon",
+        "<NAMESPACE>:label",
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:permission",
+        "<NAMESPACE>:targetActivity"
+    ],
+    "manifest->application->activity-alias->intent-filter": [
+        "<NAMESPACE>:icon",
+        "<NAMESPACE>:label",
+        "<NAMESPACE>:priority"
+    ],
+    "manifest->application->activity-alias->intent-filter->action": [
+        "<NAMESPACE>:name"
+    ],
+    "manifest->application->activity-alias->intent-filter->category": [
+        "<NAMESPACE>:name"
+    ],
+    "manifest->application->activity-alias->intent-filter->data": [
+        "<NAMESPACE>:scheme",
+        "<NAMESPACE>:host",
+        "<NAMESPACE>:port",
+        "<NAMESPACE>:path",
+        "<NAMESPACE>:pathPattern",
+        "<NAMESPACE>:pathPrefix",
+        "<NAMESPACE>:mimeType"
+    ],
+    "manifest->application->activity-alias->meta-data": [
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:resource",
+        "<NAMESPACE>:value"
+    ],
+    "manifest->application->service>": [
+        "<NAMESPACE>:enabled",
+        "<NAMESPACE>:exported",
+        "<NAMESPACE>:icon",
+        "<NAMESPACE>:isolatedProcess",
+        "<NAMESPACE>:label",
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:permission",
+        "<NAMESPACE>:process"
+    ],
+    "manifest->application->service->intent-filter": [
+        "<NAMESPACE>:icon",
+        "<NAMESPACE>:label",
+        "<NAMESPACE>:priority"
+    ],
+    "manifest->application->service->intent-filter->action": [
+        "<NAMESPACE>:name"
+    ],
+    "manifest->application->service->intent-filter->category": [
+        "<NAMESPACE>:name"
+    ],
+    "manifest->application->service->intent-filter->data": [
+        "<NAMESPACE>:scheme",
+        "<NAMESPACE>:host",
+        "<NAMESPACE>:port",
+        "<NAMESPACE>:path",
+        "<NAMESPACE>:pathPattern",
+        "<NAMESPACE>:pathPrefix",
+        "<NAMESPACE>:mimeType"
+    ],
+    "manifest->application->service->meta-data": [
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:resource",
+        "<NAMESPACE>:value"
+    ],
+    "manifest->application->receiver": [
+        "<NAMESPACE>:enabled",
+        "<NAMESPACE>:exported",
+        "<NAMESPACE>:icon",
+        "<NAMESPACE>:label",
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:permission",
+        "<NAMESPACE>:process"
+    ],
+    "manifest->application->receiver->intent-filter": [
+        "<NAMESPACE>:icon",
+        "<NAMESPACE>:label",
+        "<NAMESPACE>:priority"
+    ],
+    "manifest->application->receiver->intent-filter->action": [
+        "<NAMESPACE>:name"
+    ],
+    "manifest->application->receiver->intent-filter->category": [
+        "<NAMESPACE>:name"
+    ],
+    "manifest->application->receiver->intent-filter->data": [
+        "<NAMESPACE>:scheme",
+        "<NAMESPACE>:host",
+        "<NAMESPACE>:port",
+        "<NAMESPACE>:path",
+        "<NAMESPACE>:pathPattern",
+        "<NAMESPACE>:pathPrefix",
+        "<NAMESPACE>:mimeType"
+    ],
+    "manifest->application->receiver->meta-data": [
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:resource",
+        "<NAMESPACE>:value"
+    ],
+    "manifest->application->provider>": [
+        "<NAMESPACE>:authorities",
+        "<NAMESPACE>:enabled",
+        "<NAMESPACE>:exported",
+        "<NAMESPACE>:grantUriPermissions",
+        "<NAMESPACE>:icon",
+        "<NAMESPACE>:initOrder",
+        "<NAMESPACE>:label",
+        "<NAMESPACE>:multiprocess",
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:permission",
+        "<NAMESPACE>:process",
+        "<NAMESPACE>:readPermission",
+        "<NAMESPACE>:syncable",
+        "<NAMESPACE>:writePermission"
+    ],
+    "manifest->application->provider->grant-uri-permission": [
+        "<NAMESPACE>:path",
+        "<NAMESPACE>:pathPattern",
+        "<NAMESPACE>:pathPrefix"
+    ],
+    "manifest->application->provider->meta-data": [
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:resource",
+        "<NAMESPACE>:value"
+    ],
+    "manifest->application->provider->path-permission": [
+        "<NAMESPACE>:path",
+        "<NAMESPACE>:pathPrefix",
+        "<NAMESPACE>:pathPattern",
+        "<NAMESPACE>:permission",
+        "<NAMESPACE>:readPermission",
+        "<NAMESPACE>:writePermission"
+    ],
+    "manifest->application->uses-library": [
+        "<NAMESPACE>:name",
+        "<NAMESPACE>:required"
+    ]
+}

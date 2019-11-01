@@ -1,0 +1,55 @@
+<manifest id="manifest">
+    <uses-permission id="manifest->uses-permission" />
+    <permission id="manifest->permission" />
+    <permission-tree id="manifest->permission-tree" />
+    <permission-group id="manifest->permission-group" />
+    <instrumentation id="manifest->instrumentation" />
+    <uses-sdk id="manifest->uses-sdk" />
+    <uses-configuration id="manifest->uses-configuration" />  
+    <uses-feature id="manifest->uses-feature" />  
+    <supports-screens id="manifest->supports-screens" />  
+    <compatible-screens id="None">
+        <screen id="manifest->compatible-screens->screen" />
+    </compatible-screens>  
+    <supports-gl-texture id="manifest->supports-gl-texture" />  
+    <application id="manifest->application">
+        <activity id="manifest->application->activity">
+            <intent-filter id="manifest->application->activity->intent-filter">
+                <action id="manifest->application->activity->intent-filter->action" />
+                <category id="manifest->application->activity->intent-filter->category" />
+                <data id="manifest->application->activity->intent-filter->data" />
+            </intent-filter>
+            <meta-data id="manifest->application->activity->meta-data" />
+        </activity>
+        <activity-alias id="manifest->application->activity-alias">
+            <intent-filter id="manifest->application->activity-alias->intent-filter">
+                <action id="manifest->application->activity-alias->intent-filter->action" />
+                <category id="manifest->application->activity-alias->intent-filter->category" />
+                <data id="manifest->application->activity-alias->intent-filter->data" />
+            </intent-filter>
+            <meta-data id="manifest->application->activity-alias->meta-data" />
+        </activity-alias>
+        <service id="manifest->application->service">
+            <intent-filter id="manifest->application->service->intent-filter">
+                <action id="manifest->application->service->intent-filter->action" />
+                <category id="manifest->application->service->intent-filter->category" />
+                <data id="manifest->application->service->intent-filter->data" />
+            </intent-filter>
+            <meta-data id="manifest->application->service->meta-data" />
+        </service>
+        <receiver id="manifest->application->receiver">
+            <intent-filter id="manifest->application->receiver->intent-filter">
+                <action id="manifest->application->receiver->intent-filter->action" />
+                <category id="manifest->application->receiver->intent-filter->category" />
+                <data id="manifest->application->receiver->intent-filter->data" />
+            </intent-filter>
+            <meta-data id="manifest->application->receiver->meta-data" />
+        </receiver>
+        <provider id="manifest->application->provider">
+            <grant-uri-permission id="manifest->application->provider->grant-uri-permission" />
+            <meta-data id="manifest->application->provider->meta-data" />
+            <path-permission id="manifest->application->provider->path-permission" />
+        </provider>
+        <uses-library id="manifest->application->uses-library" />
+    </application>
+</manifest>
