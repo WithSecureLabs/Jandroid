@@ -1,6 +1,6 @@
-apps/*
+apps/
 test/
-output/raw/*
+output/raw/
 output/graph/jandroid.html
 **/__pycache__*
 **/*.pyc
