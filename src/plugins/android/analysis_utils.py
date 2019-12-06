@@ -162,6 +162,8 @@ class AnalysisUtils:
         method_objs = []
         if desc_part != '.':
             desc_part = re.escape(desc_part)
+        class_part = re.escape(class_part)
+        method_part = re.escape(method_part)
         
         for method in self.androguard_dx.find_methods(
             class_part,
