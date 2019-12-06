@@ -162,13 +162,13 @@ class AnalysisUtils:
         method_objs = []
         if desc_part != '.':
             desc_part = re.escape(desc_part)
-        method_objs.extend(
-            self.androguard_dx.find_methods(
-                class_part,
-                method_part,
-                desc_part
-            )
-        )
+        
+        for method in self.androguard_dx.find_methods(
+            class_part,
+            method_part,
+            desc_part
+        ):
+            method_objs.append(method)
         return method_objs
         
     def fn_get_calls_to_method(self, class_part, method_part, desc_part):
