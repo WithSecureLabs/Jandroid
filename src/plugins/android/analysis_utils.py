@@ -309,7 +309,7 @@ class AnalysisUtils:
         :returns: list of unique methods that call the class of interest
         """
         # First get all matching classes.
-        class_objs = self.fn_get_classes(string)
+        class_objs = self.fn_get_classes(class_part)
         
         # Now check the xref_from (i.e., calls to) for the class(es).
         calling_methods = set()
