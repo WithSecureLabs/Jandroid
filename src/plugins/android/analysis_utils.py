@@ -314,21 +314,22 @@ class AnalysisUtils:
         # Now check the xref_from (i.e., calls to) for the class(es).
         calling_methods = set()
         for class_obj in class_objs:
-            for xref_from_elem in class_obj.get_xref_from():
-                # The xref_from_elem is a tuple where the second element
-                #  is the EncodedMethod object.
-                # If we don't want anything with user interaction.
-                method_name = xref_from_elem[1].get_name()
-                if self.keep_user_interaction == False:
-                    is_user_interaction = \
-                        self.fn_check_for_user_interaction_element(
-                            method_name
-                        )
-                    # If the method is to do with user interaction,
-                    #  don't include it.
-                    if is_user_interaction == True:
-                        continue
-                calling_methods.add(xref_from_elem[1])
+            for meth in class_obj.get_methods():
+                for xref_from_elem in meth.get_xref_from():
+                    # The xref_from_elem is a tuple where the second element
+                    #  is the EncodedMethod object.
+                    # If we don't want anything with user interaction.
+                    method_name = xref_from_elem[1].get_name()
+                    if self.keep_user_interaction == False:
+                        is_user_interaction = \
+                            self.fn_check_for_user_interaction_element(
+                                method_name
+                            )
+                        # If the method is to do with user interaction,
+                        #  don't include it.
+                        if is_user_interaction == True:
+                            continue
+                    calling_methods.add(xref_from_elem[1])
         return list(calling_methods)
         
     def fn_check_for_user_interaction_element(self, method_name):
