@@ -465,7 +465,7 @@ class WorkerAnalyseApp:
                     _, \
                     self.androguard_d_array, \
                     self.androguard_dx = \
-                    AnalyzeDEX(
+                    AnalyzeDex(
                         self.current_app_filepath,
                         session=None
                     )
