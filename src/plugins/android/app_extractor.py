@@ -54,7 +54,7 @@ class AppExtractor:
         """Determines which function to call based on pull location."""
         logging.info('Extracting apps from device or image.')
         if self.pull_location == 'device':
-            inst_adb_pull = ADBPull(self.path_platform_tools)
+            inst_adb_pull = ADBPull(self.path_platform_tools, self.path_app_folder)
             inst_adb_pull.fn_pull_from_device()
         elif self.pull_location == 'ext4':
             inst_ext4_extractor = Ext4Extractor(self.path_app_folder)
@@ -67,12 +67,13 @@ class AppExtractor:
 class ADBPull:
     """Class to pull APKs from an attached Android device or VM."""
 
-    def __init__(self, adb_path):
+    def __init__(self, adb_path, path_app_folder):
         """Sets path to ADB executable.
         
         :param adb_path: string specifying path to ADB executable
         """
         self.path_platform_tools = adb_path
+        self.path_app_folder = path_app_folder
         
     def fn_pull_from_device(self):
         """Pulls APKs from an attached Android device via ADB.
