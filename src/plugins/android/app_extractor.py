@@ -131,7 +131,7 @@ class ADBPull:
             command should fail.
         """
         logging.debug(
-            'Pulling package ' + pkg + ' from ' + path_to_apk
+            'Pulling package ' + pkg + ' from ' + path_to_pkg
         )
         
         # Remove the "package:" string from path.
