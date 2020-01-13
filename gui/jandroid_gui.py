@@ -3559,11 +3559,14 @@ class JandroidGui:
         # Get each line of stdout and update the text area
         #  in the Log Subwindow.
         for stdout_line in self.jandroid_process.stdout:
-            self.main_window.queueFunction(
-                self.main_window.setTextArea,
-                'Log File',
-                stdout_line
-            )
+            try:
+                self.main_window.queueFunction(
+                    self.main_window.setTextArea,
+                    'Log File',
+                    stdout_line
+                )
+            except Exception as e:
+                pass
         self.jandroid_process.stdout.close()
         
         # Wait for the process to end and get the returncode.
