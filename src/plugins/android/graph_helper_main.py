@@ -380,6 +380,8 @@ class GraphHelperMain:
         for attribute_value in attribute_value_list:
             # If the string contains only "[", it means no attribute value has
             #  yet been added. This means we don't need a comma-separation.
+            if type(attribute_value) != type(""):
+                attribute_value = ",".join(attribute_value[:-1])
             if list_as_string == '[':
                 list_as_string = list_as_string + '"' + attribute_value + '"'
             else:
