@@ -2,7 +2,7 @@
 #### Requirements file ####
 #### Use `pip install -r requirements.txt`
 #
-
+appjar
 neo4j
 androguard == 3.3.5
 neo4jrestclient
