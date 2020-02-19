@@ -462,7 +462,8 @@ class CodeTrace:
                     )
             else:
                 method_descriptors = [method_part + desc_part]
-            
+            if not method_descriptors:
+                method_descriptors = [method_part + desc_part]            
             # Go to the next step of the trace.
             for class_part in class_parts:
                 for method_descriptor in method_descriptors:
@@ -489,7 +490,7 @@ class CodeTrace:
         all_superclasses = \
             self.inst_analysis_utils.fn_find_superclasses(class_part)
         # Is this needed?
-        #all_superclasses.append(class_part)
+        all_superclasses.append(class_part)
         for superclass in all_superclasses:
             superclass = superclass.strip()
             if superclass in relevant_object:
@@ -567,11 +568,14 @@ class CodeTrace:
         :param trace_chain: string denoting ordered trace chain
         """
         compound_name = class_part + '->' + method_part + desc_part
+        if compound_name.startswith('Landroid') or compound_name.startswith('Ljava') or compound_name.startswith('Lcom/google/android'):
+            return
         if compound_name in self.checked_methods:
             return
         else:
             self.checked_methods.add(compound_name)
 
+        tmpChain = []
         # Check if stop condition is met.
         self.fn_check_stop_condition(compound_name)
         if self.stop_condition == STOP_CONDITION_TRUE:
@@ -583,8 +587,11 @@ class CodeTrace:
             # If somehow we have the same chain repeated:
             if trace_chain in self.output_chains:
                 return
-            self.output_chains.append(trace_chain)            
-            return
+            self.output_chains.append(trace_chain)
+            for trace_chain in tmpChain:
+                if trace_chain in self.output_chains:
+                    return
+                self.output_chains.append(trace_chain)            return
         elif self.stop_condition == STOP_CONDITION_MAYBE:
             self.stop_condition = STOP_CONDITION_FALSE
             compound_name = '|MAYBE|' + compound_name
@@ -596,7 +603,19 @@ class CodeTrace:
             if trace_chain in self.output_chains:
                 return
             self.output_chains.append(trace_chain)
-            
+            for trace_chain in tmpChain:
+                if trace_chain in self.output_chains:
+                    return
+                self.output_chains.append(trace_chain)            return
+        else:
+            if trace_chain == '':
+                trace_chain = compound_name
+            else:
+                trace_chain = trace_chain + ',' + compound_name
+            # If somehow we have the same chain repeated:
+            if trace_chain in tmpChain:
+                return
+            tmpChain.append(trace_chain)            
         # If the stop condition wasn't met,
         #  and we haven't exceeded the max chain length.
         trace_chain_as_list = trace_chain.split(',')
