@@ -591,7 +591,8 @@ class CodeTrace:
             for trace_chain in tmpChain:
                 if trace_chain in self.output_chains:
                     return
-                self.output_chains.append(trace_chain)            return
+                self.output_chains.append(trace_chain)
+            return
         elif self.stop_condition == STOP_CONDITION_MAYBE:
             self.stop_condition = STOP_CONDITION_FALSE
             compound_name = '|MAYBE|' + compound_name
@@ -606,7 +607,7 @@ class CodeTrace:
             for trace_chain in tmpChain:
                 if trace_chain in self.output_chains:
                     return
-                self.output_chains.append(trace_chain)            return
+                self.output_chains.append(trace_chain)
         else:
             if trace_chain == '':
                 trace_chain = compound_name
