@@ -445,7 +445,7 @@ class CodeTrace:
         class_part = None
         method_part = None
         desc_part = None
-        
+
         # Start trace for each starting point.
         for starting_point in starting_points:
             # Get class/method/desc parts.
@@ -532,6 +532,19 @@ class CodeTrace:
                 desc_part
             )
         
+        # We want to also add the original method to the search as it might not be directly called, for example OnCreate.
+        if desc_part != '.':
+            desc_part = re.escape(desc_part)
+        class_part = re.escape(class_part)
+        method_part = re.escape(method_part)
+
+        mathcing_methods = self.androguard_dx.find_methods(
+            class_part,
+            method_part,
+            desc_part)
+        for method in mathcing_methods:
+            starting_points.append(method.get_method())
+
         # Reset.
         class_part = None
         method_part = None
