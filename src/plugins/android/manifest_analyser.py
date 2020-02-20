@@ -217,6 +217,13 @@ class ManifestAnalyser:
                         current_template[key],
                         xml_search_result
                     )
+        logging.debug(
+            'Finished Analysing '
+            + str(current_xml_tree)
+            + ' against template '
+            + str(current_template)
+            + '.'
+        )
 
     def fn_analyse_return(self, returnable_elements_string,
                           manifest_location):
