@@ -113,12 +113,12 @@ class CodeSearch:
         # Each type will increment the search-to-be-performed count.
         # If the outcome is True, then the satisfied searches count
         #  will also be incremented.
-        for search_item in self.search_template:
+        for search_item in search_dictionary:
             total_searches_to_perform += 1
             bool_search_satisfied = \
                 self.fn_determine_search_type(
                     search_item,
-                    self.search_template[search_item]
+                    search_dictionary[search_item]
                 )            
             if bool_search_satisfied == True:
                 satisfied_searches += 1
